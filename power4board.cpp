@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include<ctime>
 
 using namespace std;
 
@@ -103,27 +104,10 @@ public:
         }
         return true;
     }
-
-    int evaluateMove(int col, char token) {
-        // Evaluate the move and return a score for the given token
-        // (You can implement a more sophisticated evaluation function)
-        return 0;
-    }
-
-    int findBestMove(char token) {
-        int bestMove = -1;
-        int bestScore = -1000;
-
-        for (int col = 0; col < COLUMNS; col++) {
-            if (isValidMove(col)) {
-                int score = evaluateMove(col, token);
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestMove = col;
-                }
-            }
-        }
-
+   int findBestMove(char token) {
+   	int bestMove;
+   	srand(time(0));
+        bestMove =rand()%7;
         return bestMove;
     }
 
